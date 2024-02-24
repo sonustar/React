@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import"./App.css"
 
 function App() {
 
@@ -13,6 +16,12 @@ function App() {
     const [tshirtSize, setTshirtSize] = useState('');
     const [campus, setCampus] = useState('');
     const [paidTo, setPaidTo] = useState('');
+    const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
 
     const handleCampusChange = (event) => {
         const selectedCampus = event.target.value;
@@ -29,93 +38,96 @@ function App() {
 
     }
 
-        const handleTshirtSizeChange = (event) => {
-            setTshirtSize(event.target.value);
-        };
+    const handleTshirtSizeChange = (event) => {
+        setTshirtSize(event.target.value);
+    };
 
-        const handleDepartmentChange = (event) => {
-            setDepartment(event.target.value);
-        };
+    const handleDepartmentChange = (event) => {
+        setDepartment(event.target.value);
+    };
 
-        const handleCollegeChange = (event) => {
-            setCollege(event.target.value);
-        };
+    const handleCollegeChange = (event) => {
+        setCollege(event.target.value);
+    };
 
-        const handlePhoneChange = (event) => {
-            setPhone(event.target.value);
-        };
+    const handlePhoneChange = (event) => {
+        setPhone(event.target.value);
+    };
 
-        const handleEmailChange = (event) => {
-            setEmail(event.target.value);
-        };
+    const handleEmailChange = (event) => {
+        setEmail(event.target.value);
+    };
 
-        const handlePaymentModeChange = (event) => {
-            setPaymentMode(event.target.value);
-        };
+    const handlePaymentModeChange = (event) => {
+        setPaymentMode(event.target.value);
+    };
 
-        const handleNameChange = (event) => {
-            setName(event.target.value);
-        };
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+    };
 
 
-        return (
-            <div className=" h-full bg-gray-900 text-white font-sans">
-                <div className="flex items-center justify-center bg-gray-900">
-                    {/* Grid background */}
-                    <div className="absolute inset-0 p-2 grid grid-cols-12 gap-2 transform -skew-y-12 scale-125">
-                        {/* row 1 */}
-                        <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-5 bg-gray-800 rounded"></div>
-                        <div className="col-span-1 bg-gray-800 rounded"></div>
-                        <div className="col-span-4 bg-gray-800 rounded"></div>
+    return (
+        <div className=" h-screen w-full bg-gray-900 ">
+            <div className="flex items-center justify-center bg-gray-900">
+                {/* Grid background */}
+                <div className="absolute inset-0 p-2 grid grid-cols-12 gap-2 transform -skew-y-12 scale-125 ">
+                    {/* row 1 */}
+                    <div className="col-span-2 bg-gray-800 rounded overflow-hidden animate-pulse"></div>
+                    <div className="col-span-5 bg-gray-800 rounded overflow-hidden "></div>
+                    <div className="col-span-1 bg-gray-800 rounded overflow-hidden "></div>
+                    <div className="col-span-4 bg-gray-800 rounded overflow-hidden "></div>
 
-                        {/* row 2 */}
-                        <div className="col-span-5 bg-gray-800 rounded"></div>
-                        <div className="col-span-3 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-2 bg-gray-800 rounded"></div>
-                        <div className="col-span-2 bg-gray-800 rounded"></div>
+                    {/* row 2 */}
+                    <div className="col-span-5 bg-gray-800 rounded"></div>
+                    <div className="col-span-3 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-2 bg-gray-800 rounded"></div>
+                    <div className="col-span-2 bg-gray-800 rounded"></div>
 
-                        {/* row 3 */}
-                        <div className="col-span-4 bg-gray-800 rounded"></div>
-                        <div className="col-span-7 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-1 bg-gray-800 rounded"></div>
+                    {/* row 3 */}
+                    <div className="col-span-4 bg-gray-800 rounded"></div>
+                    <div className="col-span-7 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-1 bg-gray-800 rounded"></div>
 
-                        {/* row-4 */}
-                        <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-4 bg-gray-800 rounded"></div>
-                        <div className="col-span-6 bg-gray-800 rounded animate-pulse"></div>
+                    {/* row-4 */}
+                    <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-4 bg-gray-800 rounded"></div>
+                    <div className="col-span-6 bg-gray-800 rounded animate-pulse"></div>
 
-                        {/* row-5 */}
-                        <div className="col-span-5 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-3 bg-gray-800 rounded"></div>
-                        <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-2 bg-gray-800 rounded"></div>
+                    {/* row-5 */}
+                    <div className="col-span-5 bg-gray-800 rounded animate-pulse "></div>
+                    <div className="col-span-3 bg-gray-800 rounded "></div>
+                    <div className="col-span-2 bg-gray-800 rounded animate-pulse "></div>
+                    <div className="col-span-2 bg-gray-800 rounded "></div>
 
-                        {/* row-6 */}
-                        <div className="col-span-4 bg-gray-800 rounded"></div>
-                        <div className="col-span-7 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-1 bg-gray-800 rounded"></div>
+                    {/* row-6 */}
+                    <div className="col-span-4 bg-gray-800 rounded"></div>
+                    <div className="col-span-7 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-1 bg-gray-800 rounded"></div>
 
-                        <div className="col-span-4 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-7 bg-gray-800 rounded "></div>
-                        <div className="col-span-1 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-4 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-7 bg-gray-800 rounded "></div>
+                    <div className="col-span-1 bg-gray-800 rounded animate-pulse"></div>
 
-                        <div className="col-span-4 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-7 bg-gray-800 rounded "></div>
-                        <div className="col-span-1 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-4 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-7 bg-gray-800 rounded "></div>
+                    <div className="col-span-1 bg-gray-800 rounded animate-pulse"></div>
 
-                        <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
-                        <div className="col-span-4 bg-gray-800 rounded"></div>
-                        <div className="col-span-6 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-4 bg-gray-800 rounded"></div>
+                    <div className="col-span-6 bg-gray-800 rounded animate-pulse"></div>
+                    
+                    <div className="col-span-2 bg-gray-800 rounded animate-pulse"></div>
+                    <div className="col-span-4 bg-gray-800 rounded"></div>
+                    <div className="col-span-6 bg-gray-800 rounded animate-pulse"></div>
+                </div>
 
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative">
-                        <h2 className="text-4xl text-white font-extrabold">
-                            Welcome to the <span className="text-purple-600">Merchandise</span> page
-                        </h2>
-
+                {/* Content */}
+                <div className="relative mb-10">
+                    <h2 className="text-4xl text-white font-extrabold mb-10 mt-10">
+                        Welcome to the <span className="text-purple-600">Merchandise</span> page
+                    </h2>
+                    <div className="glassmorphism-container">
                         <div className="relative h-auto overflow-hidden mt-5">
                             <form action="" className="mx-auto max-w-md">
                                 {/* Name Feild */}
@@ -209,9 +221,9 @@ function App() {
                                     <label className="block text-white">Payment Mode</label>
                                     <div className="flex items-center">
                                         <input type="radio" id="upi" name="payment-mode" value="upi" className="mr-2" onChange={handlePaymentModeChange} />
-                                        <label htmlFor="upi" className="text-black mr-8">UPI</label>
+                                        <label htmlFor="upi" className="text-white mr-8">UPI</label>
                                         <input type="radio" id="cash" name="payment-mode" value="cash" className="ml-10" onChange={handlePaymentModeChange} />
-                                        <label htmlFor="cash" className="text-black">Cash</label>
+                                        <label htmlFor="cash" className="text-white">Cash</label>
                                     </div>
                                 </div>
 
@@ -233,7 +245,7 @@ function App() {
                                         />
                                     </div>
                                 )}
-                                <div className="mb-4">
+                                <div className="mb-4 ">
                                     <label htmlFor="campus" className="block text-white">Campus</label>
                                     <select
                                         id="campus"
@@ -260,18 +272,43 @@ function App() {
                                         </div>
                                     )}
                                 </div>
-                                <div className="mb-4">
-                                    <label htmlFor="password" className="block text-white">Password</label>
-                                    <input id="password" type="password" required className="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800" />
-                                </div>
+                                
+                                    
+                                        <div className="mb-2">
+                                            <label htmlFor="password" className="block text-white">Password</label>
+                                            <div className="relative">
+                                                <input
+                                                    id="password"
+                                                    type={showPassword ? 'text' : 'password'}
+                                                    value={password}
+                                                    required
+                                                    placeholder="Enter your password"
+                                                    className="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-800"
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                />
+                                                <button
+                                                    type="button"
+                                                    className="absolute inset-y-0 right-0 flex items-center px-3 text-gray-400"
+                                                    onClick={togglePasswordVisibility}
+                                                >
+                                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className='flex justify-center items-center'>
+                                        <button className="btn">Hover Me!</button>
+                                        </div>
                             </form>
+                           
                         </div>
                     </div>
                 </div>
-            </div>
-        );
-    }
 
-    export default App;
+            </div>
+        </div>
+    );
+}
+
+export default App;
 
 
